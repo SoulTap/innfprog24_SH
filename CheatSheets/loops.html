@@ -6,8 +6,10 @@
     <title>Loops cheat sheet</title>
 </head>
 <body>
-    <h1>Regn ut summen av alle tall mellom <span id="start">X</span> <span id="stopp">Y</span></h1>
-    <p id="utregning">0</p>
+    <h1>Regn ut summen av alle tall mellom <span id="start">X</span> og <span id="stopp">Y</span></h1>
+    <p id="utregning"></p>
+    <h1>Vis alle heltall som er delelig på <span id="deltall">Z</span> mellom <span id="delstart">X</span> og <span id="delstopp">Y</span></h1>
+    <p id="deleresultater"></p>
     <script>
         /*
             For-løkke trenger tre parameter
@@ -27,7 +29,34 @@
        }
 
        //Utregning av alle tall mellom X og Y
-       
+       const x = 9
+       const y = 200
+       let sum = 0
+
+       document.getElementById("start").innerHTML = x
+       document.getElementById("stopp").innerHTML = y
+
+       for(let teller = x; teller <= y; teller++) {
+        sum += teller
+        if(teller === y) {
+            document.getElementById("utregning").innerHTML += teller + " = " + sum
+        } else {
+            document.getElementById("utregning").innerHTML += teller + " + "
+        }
+        
+       }
+       ///Vis heltall som er delelige på Z
+       const z = 3
+
+       document.getElementById("delstart").innerHTML = x
+       document.getElementById("delstopp").innerHTML = y
+       document.getElementById("deltall").innerHTML = z
+
+       for(let teller = x; teller <= y; teller++) {
+        if(teller % z === 0) {
+            document.getElementById("deleresultater").innerHTML += teller + ", "
+        }
+       }
     </script>
 </body>
 </html>
